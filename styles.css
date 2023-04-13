@@ -1,44 +1,71 @@
 html {
-  background-color: #00008b;
+  background-color: #ffffff;
   color: #bbdbf7;
 }
-h1 {text-align: center;
-  
 
+body {
+
+  display: flex;
 }
+
+.leftPanel {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content:space-around;
+align-items:end
+}
+.eraser {
+  background-color: white;
+  color: black;
+  
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+
+.rightPanel {
+flex: 1
+}
+
+
+h1 {text-align: center;
+}
+
 .wholePage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex:2;
 }
 
 #container {
-   border: black solid 1px;  
+   border: #007fee solid 10px;  
   display: flex;
   justify-content: center;   
   height: 500px;
   width: 500px;  
-  box-shadow: 50px;
+  box-shadow:#bbdbf7;
   border-radius: 10px;
 
 }
-
-
 
 .grid {
     width: 500px;
     display: flex;
     flex-flow: row wrap;
-    justify-content:center;
-    
-    
+    justify-content:center;  
 }
 
 .squareDivs {
-     
     background-color: #bbdbf7;
-    border-radius: 1px;   
 }
 .menu {
   display:flex;
@@ -51,6 +78,9 @@ h1 {text-align: center;
   flex-direction: column;
   align-items: center;
   flex: 1;
+  background-color: #00008b;
+  border-radius: 10px;
+  margin-right: 5px;
 }
 .rightMenu {
   display: flex;
@@ -60,12 +90,14 @@ h1 {text-align: center;
 button {
   color: #bbdbf7;
   background-color: #00008b;
-  box-shadow: 5px;
-  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  border-radius: 10px;
   width: 100px;
+  height: 38px;
 }
 
-.color {
+.blackGrid {
 
-  background-color: black;
+  background-color: rgb(11, 95, 151);
 }
+

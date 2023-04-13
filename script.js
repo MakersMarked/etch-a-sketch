@@ -2,20 +2,20 @@ const container = document.querySelector('#container')
 const input = document.querySelector('input')
 let inputText = document.querySelector('.inputText')
 const grid = document.querySelector('.grid')
-let gridSize = 24
+const apply = document.querySelector('.applyBtn')
+const resetBtn = document.querySelector('.resetBtn')
+const redBtn = document.querySelector('.red');
+const blueBtn = document.querySelector('.blue')
+const greenBtn = document.querySelector('.green')
+const eraserBtn = document.querySelector('.eraser')
+let gridSize = 10
 //Function to create a Div with relative dimensions
 function createGridDivs (size){
     const div = document.createElement('div');
         div.classList.add('squareDivs');   
         div.style.height =`${size}px`;
         div.style.width =`${size}px`; 
-        function changeColor() {
-            div.addEventListener('mouseover', (e) =>{
-                if (e.target.matches('.squareDivs')){
-                    e.target.classList.add('color')
-                }
-            })
-} 
+        
     changeColor()
     return div  
 }
@@ -27,20 +27,45 @@ createGrid = () => {
 }
 createGrid()
 
-
-
-
+function changeColor() {
+    
+    redBtn.addEventListener('click', () =>  grid.addEventListener('mouseover', (e) =>{
+        e.target.style.backgroundColor = 'red'
+            })
+        );
+    blueBtn.addEventListener('click', () => grid.addEventListener('mouseover', (e) =>{
+        e.target.style.backgroundColor = 'blue'
+    }));
+    greenBtn.addEventListener('click', () => grid.addEventListener('mouseover', (e) =>{
+        e.target.style.backgroundColor = 'green'
+    }));
+    eraserBtn.addEventListener('click', () => grid.addEventListener('mouseover', (e) =>{
+        e.target.style.backgroundColor = 'white'
+    }));
+            
+        
+} 
+console.log(changeColor())
 function reset() {
-
-
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+    createGrid() 
 }
 
 input.addEventListener('input', (e) => {
     gridSize = e.target.value;
     inputText.textContent= `${gridSize} x ${gridSize}`;
-
 })
 
+apply.addEventListener('click', () =>{
+    
+    reset()
+    console.log(`${input.value}`)
+})
 
-
-
+resetBtn.addEventListener('click', () => {
+    gridSize = 8
+    reset()
+    console.log(input.value)
+})
